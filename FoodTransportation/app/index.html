@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Food Transportation DApp</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script src="./build/app.js"></script>
+</head>
+<body class="container">
+<div id="app">
+
+<el-tag type="success" style="font-size: 20px;" ><i class="el-icon-position"></i>食品物流溯源系统</el-tag>
+<el-row :gutter="40">
+  <el-col :span="10"><div class="grid-content bg-purple">
+  <br> <label for="contractAddress">食品信息地址:</label> <input type="text" class="form-control" id="contractAddress" placeholder="请输入食品信息地址"></input>
+  <br> <label for="locationName">食品名称:</label> <input type="text" class="form-control" id="foodName" placeholder="请输入食品名称"></input>
+  <br> <label for="locationName">位置名称:</label> <input type="text" class="form-control" id="locationName" placeholder="请输入当前位置"></input>
+  <br> <label for="locationName">运输员:</label> <input type="text" class="form-control" id="personName" placeholder="请输入当前运输员名称"></input>
+  </div></el-col>
+  <el-col :span="14">
+	  <button class="btn btn-success" id="getCurrentLocation" onclick="App.getCurrentLocation()">获取当前食品溯源信息</button>
+<h5>食品溯源信息</h5>
+<div class="bs-example" style="border: 1.4px solid #dddddd;"> 
+  <div id="table_foodName" style="font-size: 18px;margin-left: 9px;"></div>
+  <table class="table table-hover" id="tb">
+    <thead>
+      <tr>
+        <!-- <th>Food Name</th> -->
+        <th>位置</th>
+        <th>运输员</th>
+        <th>时间</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div></el-col>
+</el-row>
+<!-- <br> <label for="contractAddress">食品信息地址:</label> <input type="text" class="form-control" id="contractAddress" placeholder="请输入食品信息地址"></input>
+<br> <label for="locationName">食品名称:</label> <input type="text" class="form-control" id="foodName" placeholder="请输入食品名称"></input>
+<br> <label for="locationName">位置名称:</label> <input type="text" class="form-control" id="locationName" placeholder="请输入当前位置"></input>
+<br> <label for="locationName">运输员:</label> <input type="text" class="form-control" id="personName" placeholder="请输入当前运输员名称"></input>
+ -->
+
+<br> <br>
+<button class="btn btn-success" id="createContract" onclick="App.createContract()">添加新食品</button>
+<button class="btn btn-success" id="addNewLocation" onclick="App.addNewLocation()">更新食品位置</button>
+
+<br> <br>
+
+
+<!-- <textarea id="textArea" rows="15" cols="100" ></textarea> -->
+
+
+
+<!-- <table class="table table-hover">
+  ...
+</table> -->
+
+
+</div>
+
+</body>
+ <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <!-- import JavaScript -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: function() {
+        return { url:"../src/eth.jpg" }
+      }
+    })
+  </script>
+</html>
+
