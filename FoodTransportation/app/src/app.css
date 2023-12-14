@@ -45,3 +45,8 @@ h3 {
 .hint {
     color: #666;
 }
+
+#headImg{
+    width: 30px;
+    height: 30px;
+}
