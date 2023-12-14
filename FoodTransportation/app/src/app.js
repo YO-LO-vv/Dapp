@@ -40,6 +40,7 @@ function timestampToTime (timestamp){
 
 window.App = {
     start: function() {
+        // 检查是否输入地址来决定按钮是否可用
 		var contractAddress = document.getElementById("contractAddress").value;
 		if(contractAddress==""){
 			document.getElementById("addNewLocation").disabled=true;
@@ -168,7 +169,7 @@ window.App = {
         })
         deployedFoodTransportation.getLocationNum.call(function (error, locationNum){
             var tbFoodName = document.getElementById("table_foodName");
-            tbFoodName.innerText = "FoodName: "+food;
+            tbFoodName.innerText = "食品名称: "+food;
             var tb = document.getElementById("tb");
             resetTable(tb);
             while (locationNum >= 1){
